@@ -1,6 +1,17 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("lediv");
 
+
+maphot = document.getElementById("limagedetail");
+photo = document.createElement("img");
+  nImg = Math.floor(Math.random() * 4) + 1;
+  photo.setAttribute(
+        "src",
+        "../assets/recettes/" + recettesDB[id].id + "/" + nImg + ".png"
+  );
+photo.setAttribute("alt", recettesDB[id].name);
+maphot.appendChild(photo);
+
 nom = document.getElementById("nomDeLaRecette");
 nom.innerHTML = recettesDB[id - 1].name;
 
@@ -21,7 +32,7 @@ for (j = 0; j < recettesDB[id-1].comments.length; j++) {
 noteavrg = notesum / recettesDB[id].comments.length;
 note.innerHTML = "note globale : " + noteavrg;
 
-det = document.getElementById("detaille");
+diving = document.getElementById("ingredient");
 
 ingredient = document.createElement("ul");
 for (j = 0; j < recettesDB[id - 1].ingredients.length; j++){
@@ -29,8 +40,8 @@ for (j = 0; j < recettesDB[id - 1].ingredients.length; j++){
     ing.innerHTML = recettesDB[id - 1].ingredients[j];
     ingredient.appendChild(ing);
 }
-det.appendChild(ingredient);
-
+diving.appendChild(ingredient);
+det=document.getElementById("detaille")
 instruction = document.createElement("ol");
 for (j = 0; j < recettesDB[id - 1].instructions.length; j++){
     ins = document.createElement("li");
@@ -39,17 +50,20 @@ for (j = 0; j < recettesDB[id - 1].instructions.length; j++){
 }
 det.appendChild(instruction);
 
+
 commentairediv = document.getElementById("lescommentaires");
 commentaire = document.createElement("div");
+commentaireimg = document.createElement("div");
 for (i = 0; i < recettesDB[id - 1].comments.length; i++){
-    nomcom = document.createElement("p");
-    nomcom.innerHTML = recettesDB[id - 1].comments[i].user;
-    rating = document.createElement("p");
-    rating.innerHTML = recettesDB[id - 1].comments[i].rating;
-    lecom = document.createElement("p");
-    lecom.innerHTML = recettesDB[id - 1].comments[i].content;
-    commentaire.appendChild(nomcom);
-    commentaire.appendChild(rating);
-    commentaire.appendChild(lecom);
+    commentairediv.innerHTML += `
+    <div class="comment">
+                    <div>
+                        <img src="../more_images/user.jpg" alt="">
+                    </div>
+                    <h2>${recettesDB[id - 1].comments[i].user}</h2>
+                    <h2>${recettesDB[id - 1].comments[i].rating } /10</h2>
+                    <p> ${recettesDB[id - 1].comments[i].content}</p>
+                </div>
+    `
 }
-commentairediv.appendChild(commentaire);
+
