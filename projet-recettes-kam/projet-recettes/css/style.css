@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Sigmar&display=swap');
+
 
 
 *{
@@ -498,144 +501,128 @@ header a{
 }
 
 /*----------------------FOOTER-------------------------*/
-.container {
-    max-width: 1170px;
-    margin: auto;
+footer{
+    background-color: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
 }
-
-.row {
+.footer-content{
     display: flex;
-    flex-wrap: wrap;
-}
-
-ul {
-    list-style: none;
-}
-
-.footer {
-    background-color: #24262b;
-    padding: 70px 0;
-}
-
-.footer-col {
-    width: 25%;
-    padding: 0 15px;
-}
-
-.footer-col h4 {
-    font-size: 18px;
-    color: #ffffff;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: 500;
-    position: relative;
-}
-
-.footer-col h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    background-color: #e91e63;
-    height: 2px;
-    box-sizing: border-box;
-    width: 50px;
-}
-
-.footer-col ul li:not(:last-child) {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    font-size: 16px;
-    text-transform: capitalize;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 300;
-    color: #bbbbbb;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-    color: #ffffff;
-    padding-left: 8px;
-}
-
-.footer-col .social-links a {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin: 0 10px 10px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #ffffff;
-    transition: all 0.5s ease;
 }
-
-.footer-col .social-links a:hover {
-    color: #24262b;
-    background-color: #ffffff;
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
 }
-
-/*responsive*/
-@media(max-width: 767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
-    }
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
 }
-
-@media(max-width: 574px) {
-    .footer-col {
-        width: 100%;
-    }
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
 }
-
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+.socials a:hover i{
+    color: aqua;
+}
+.footer-bottom{
+    background-color: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
 /***DETAIL ************************************/
-#detail_Container{
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
+#limagedetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+#limagedetail img{
+    height: 500px;
+    width: 1100px;
 }
 #generale{
-    display: flex;
+    border: 1px solid black;
+    position: absolute;
+    left: 180px;
+    top: -70px;
+    width: 400px;
     background-color: #90a955;
 }
-#generale > img{
-    width: 525px;
-}
-
-#detail_Container > #detaille{
+#detail_Container{
     display: flex;
-    justify-content: space-between;
+    position: relative;
+    height: 150vh;
 }
-#detail_Container>#detaille > ul{
-    width: 500px;
-    padding-left: 25px;
-    font-size: 20px;
-    background-color:#90a955;
+#detaille{
+    width: 600px;
+    position: absolute;
+    right: 132px;
+    top: 20px;
+    line-height: 30px;
 }
-#detail_Container>#detaille > ol{
-    width: 710px;
-    font-size: 20px;
-    border: 2px solid #90a955;
-    padding-left: 35px;
-}
-#info{
-    width: 800px;
-}
-#nomDeLaRecette{
+#generale h3 ,#detaille h3{
+    font-family: 'Lobster Two', cursive;
     font-size: 50px;
-    font-weight: 700;
-    font-style: italic;
-    color: white;
-    text-transform: uppercase;
+    text-align: center;
+    line-height: 100px;
+}
+#info {
+    font-size: 20px;
+    margin: 10px;
     text-align: center;
 }
-
+#ingredient{
+    font-size: 15px;
+    line-height: 23px;
+    padding: 10px;
+}
+#ingredient li{
+    list-style:inside ;
+}
+#lescommentaires{
+    position: absolute;
+    bottom: 10px;
+    left: 130px;
+    border: 2px solid yellow;
+}
+#lescommentaires img{
+    width: 70px;
+}
 /*****************PAGE CATALOGUE ****************/
 .search-box {
     width: fit-content;
@@ -713,17 +700,6 @@ ul {
 #affiche a img{
     width: 200px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
